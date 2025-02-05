@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}   {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'rst/styles.css' %} " type="text/css">
+</head>
+<body>
+    <nav>
+        <div class="logo-container">
+            {% comment %} <div class="unn-logo"></div> {% endcomment %}
+            <p>Result Tracking System</p>
+            <div>{% block home %}  {%endblock%} </div>
+        </div>
+        <div class="logout">
+            <a href="{% url 'rst:logout' %}"><p>Logout</p></a>
+        </div>
+    </nav>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

@@ -1,0 +1,434 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #023;
+    color: aquamarine;
+    font-family: poppins;
+    overflow-x: hidden;
+}
+
+/* Login page */
+a.signup{
+    position: absolute;
+    top: 30px;
+    left: 50px;
+}
+
+a.signup:visited{
+    color: #fff;
+}
+h1{
+    text-align: center;
+    margin-top: 40px;
+}
+h1.login{
+    text-align: center;
+    font-family: 'poppins';
+    margin-top: 30px;
+}
+div.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+div.container form, div.results-container{
+    width: 30%;
+    height: fit-content;
+    margin: 30px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: rgba(127,255,212,.3);
+}
+
+div.container form input{
+    width: 80%;
+    margin: 20px 0;
+    height: 40px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    text-indent: 3px;
+}
+
+#login:hover, input.signup:hover, input.upload:hover{
+    background-color: #023;
+    color: #fff;
+}
+
+/* Nav bar */
+nav{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background-color: rgba(127,255,212,.3);
+    display: flex;
+    height: 60px;
+    padding: 20px;
+}
+main{
+    margin-top: 100px;
+}
+
+div.logo-container{
+    width: 50%;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    gap: 30px;
+}
+
+div.logo-container div{
+    height: fit-content;
+}
+div.logo-container div a, a.signup{
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    text-decoration: none;
+}
+div.logo-container div a:hover{
+    color: #023;
+    border-bottom: 2px solid #023;
+}
+div.unn-logo{
+    background-image: url("../images/unn logo.jpg");
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+}
+
+div.logo-container p{
+    font-size: 2.3rem;
+    font-family: "poppins";
+    color: #fff;
+}
+
+div.logout{
+    position: absolute;
+    right: 70px;
+    background-color: #023;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+div.logout {
+    text-decoration: none;
+}
+
+div.logout a:active, div.logout a:visited{
+    color: #fff;
+}
+
+div.logout:hover{
+    background-color: #fff;
+}
+
+div.logout:hover a{
+    color: #023;
+}
+/* index (home page) */
+div.main-message{
+    width: 35%;
+    height: 300px;
+    background-color: rgba(127,255,212,.3);
+    margin: 60px auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+div.main-message p{
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+div.view-result{
+    background-color: #023;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+div.view-result a{
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    font-weight: 200;
+}
+div.view-result:hover{
+    background-color: #fff;
+}
+div.view-result a:hover p, div.view-result a:hover{
+    color: #023;
+}
+
+div.view-result p {
+    font-weight: 300;
+    font-size: 1.7rem;
+}
+
+/* Admin page */
+div.admin-rights-container{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+div.admin-rights a{
+    background-color: rgba(127,255,212,.3);
+    padding: 20px;
+    margin:20px;
+    display: block;
+    width: fit-content;
+    text-decoration: none;
+
+}
+
+div.admin-rights a:visited{
+    color: #fff;
+}
+
+div.admin-rights a:hover{
+    background-color: #fff;
+    color: #023;
+}
+
+/* Search  */
+h1.search{
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: 20px;
+}
+
+form.search{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    
+}
+
+input.search{
+    width: 50%;
+    height: 40px;
+    border-radius: 10px;
+    border: 0;
+    outline: 0;
+    text-indent: 5px;
+}
+
+form.search input.submit{
+    outline: none;
+    padding: 10px;
+    border: 0;
+    background-color: rgba(127,255,212,.3);
+    margin-left: 20px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+form.search input.submit:hover{
+    background-color: #fff;
+    color: #023;
+}
+
+div.search-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+ul.search {
+    margin: 20px auto;
+    list-style-type: none;
+}
+
+ul.search a {
+    text-decoration: none;
+}
+
+
+
+p.search{
+    text-align: center;
+}
+
+ul.search li{
+    background-color: rgba(127,255,212,.3);
+    padding: 5px;
+    border-radius: 5px;
+    margin: 10px;
+    color: #fff;
+}
+
+ul.search li:hover{
+    background-color: #fff;
+    color: #023;
+}
+
+/* sign up page */
+form.signup{
+    width: 100%;
+}
+div.sign-up-form-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.input{
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+#department{
+    width: 100px;
+    height: fit-content;
+    padding: 10px;
+}
+
+#signup-phone-no{
+    width: 60%;
+}
+
+div.input input{
+    width: 40%;
+}
+
+div.parent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+div.errors, div.response{
+    position: absolute;
+    left: 50px;
+    width: 20%;
+    color: rgb(116, 11, 11);
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+div.errors p, div.response p{
+    color: rgb(116, 11, 11);
+}
+
+/* upload result page  */
+div.upload-container form{
+    padding: 0;
+}
+
+div.student-data{
+width: 100%;
+background-color: rgba(27, 58, 48, 0.4);
+border-radius: 20px;
+border-bottom-left-radius: 0;
+border-bottom-right-radius: 0;
+padding: 10px;
+box-sizing: border-box;
+color: #fff;
+margin-bottom: 10px;
+}
+
+div.upload-container form div.input{
+    width: 50%;
+    text-align: left;
+    justify-content: flex-start;
+    margin-top: 5px;
+}
+
+div.upload-container form label{
+    width: 100px;
+}
+
+div.upload-container form select{
+    background-color: #fff;
+    outline: none;
+    border-radius: 3px;
+    border: 0;
+    padding: 2px;
+}
+
+#exam-score, #ca-score{
+    width: 60px;
+    height: 20px;
+    border-radius: 5px;
+}
+
+div.exam-score, div.ca-score{
+    padding: 0;
+    margin-top: 0;
+    height: 25px;
+}
+h1.upload{
+    margin-top: 150px;
+    color: #fff;
+}
+
+/* View results page */
+div.results-container{
+    padding: 0;
+    padding-bottom: 20px;
+    width: 60%;
+}
+
+div.level-result{
+    width: 30%;
+}
+
+div.level-result tr:hover td{
+    background-color: rgba(127,255,212,.3);
+}
+
+div.level-result tr td.semester:hover{
+    background-color: #023;
+}
+div.level-result tr td a{
+    text-decoration: none;
+    color: #fff;
+}
+div.results-container table{
+    border: 2px solid #fff;
+    border-collapse: collapse;
+    padding: 20px;
+    width: 80%;
+}
+div.results-container th{
+    border-bottom: 2px solid #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 5px;
+    text-align: left;
+}
+
+div.results-container td{
+    padding: 5px;
+}
+
+div.results-container tr{
+    color: #fff;
+    font-weight: 300;
+
+}
+div.results-container tr:hover{
+    background-color: #023;
+}
+div.results-container tr:hover th{
+    background-color: rgba(127,255,212,.3);
+}

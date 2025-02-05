@@ -1,0 +1,52 @@
+{% extends 'rst/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Result for {{level}} level{% endblock %}</title>
+</head>
+<body>
+    {% block home %}
+    <a href="{% url 'rst:index' %}"> Home </a>
+    {%endblock%}
+    {% block content %}
+    <h1>Result for {{level.level}} level</h1>
+    <div class="container">
+        <div class="results-container">
+            <div class="student-data">
+                <p>Registration Number: {{student.reg_no}}</p>
+                <p>Name: {{student.user.last_name}} {{student.user.first_name}}</p>
+                <p>Session: {{result.session}}</p>
+                <p>Semester: {{result.semester}}</p>
+            </div>
+                {% if unavailable %}
+                {{unavailable}}
+                {% endif %}
+                <table>
+                    <tr>
+                        <th> Course Code</th>
+                        <th>Course Title</th>
+                        <th> Unit load </th>
+                        <th> Grade </th>
+        
+                    </tr>
+                    {% for result in results %}
+                    <div class="results-row">
+                        <tr class="count">
+                            <td> {{result.course.code}}</td>
+                            <td> {{result.course.title}}</td>
+                            <td> {{result.course.unit_load}}</td>
+                            <td> {{result.grade}}</td>
+                        </tr>
+                    </div>
+                    {% endfor %}
+                </table>
+        </div>
+
+    </div>
+        
+    {% endblock %}
+</body>
+</html>

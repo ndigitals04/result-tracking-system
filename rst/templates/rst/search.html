@@ -1,0 +1,39 @@
+{% extends 'rst/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Search Student {% endblock %}</title>
+</head>
+<body>
+    {% block home %}
+    <a href="{% url 'rst:adminPage' %}"> Home </a>
+    {%endblock%}
+    {% block content %}
+    <h1 class="search">Search for Student by Reg number</h1>
+    {% if success %}
+        <p> {{success}}</p>
+        {% endif %}
+    <form class="search" action="{% url 'rst:search' %}" method="post">
+        {% csrf_token %}
+        <input class="search" type="search" placeholder="type student registration number" name="searched">
+        <input class=submit type="submit" value="Search">
+    </form>
+    
+
+    {% if searched %}
+    <div class="search-container">
+    <p class="search"> Search results, you searched for {{searched}} </p>
+    <ul class="search">
+    {% for student in students %}
+    <a href="{% url 'rst:upload' student.id %}"><li class="search">{{student}}</li></a>
+    {% endfor %}
+    </ul>
+    </div>
+    {% endif %}
+
+    {% endblock %}
+</body>
+</html>

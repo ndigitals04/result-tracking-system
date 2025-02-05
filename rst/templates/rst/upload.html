@@ -1,0 +1,87 @@
+{% extends 'rst/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Upload Student Result {% endblock %}</title>
+</head>
+<body>
+    {% block home %}
+    <a href="{% url 'rst:adminPage' %}"> Home </a>
+    {%endblock%}
+    {% block content %}
+    <h1 class="upload">Upload Student Result</h1>
+    <div class="response">
+        {% if success %}
+        <p> {{success}}</p>
+        {% endif %}
+    
+        {% if exists %}
+        <p>{{exists}}</p> 
+        {% endif %}
+    </div>
+    <div class="container upload-container">
+        <form action="{% url 'rst:upload' student.id %}" method="post">
+            {% csrf_token %}
+            <div class="student-data">
+                <p>Registration Number: {{student.reg_no}}</p>
+                <p>Name: {{student.user.last_name}} {{student.user.first_name}}</p>
+            </div>
+            <div class="input">
+                <label for="course">Course:</label>
+                <select id="course" name="course">
+                    {% for course in courses %}
+                    <option value= {{course.id}}>{{course.code}}</option>
+                    {%endfor%}
+                </select>
+            </div>
+            <div class="input">
+                <label for="level">Level:</label>
+                <select id="level" name="level">
+                    {% for level in levels %}
+                    <option value= {{level.id}}>{{level}}</option>
+                    {%endfor%}
+                </select>
+            </div>
+            <div class="input exam-score">
+                <label for="exam-score">Exam Score:</label>
+                <input type="number" name="exam-score" id="exam-score">
+            </div>
+            <div class="input ca-score">
+                <label for="ca-score">CA Score:</label>
+                <input type="number" name="ca-score" id="ca-score">
+            </div>
+            <div class="input">
+                <label for="grade">Grade:</label>
+                <select id="grade" name="grade">
+                    {% for grade in grades %}
+                    <option value= {{grade.id}}>{{grade}}</option>
+                    {%endfor%}
+                </select>
+            </div>       
+            <div class="input">
+                <label for="session">Session:</label>
+                <select id="session" name="session">
+                    {% for session in sessions %}
+                    <option value= {{session.id}}>{{session}}</option>
+                    {%endfor%}
+                </select>
+            </div>
+            <div class="input">
+                <label for="semester">Semester:</label>
+                <select id="semester" name="semester">
+                    {% for semester in semesters %}
+                    <option value= {{semester.id}}>{{semester}}</option>
+                    {%endfor%}
+                </select>
+            </div>
+            
+                <input type="submit" value="upload" class="upload">
+        </form>
+    </div>
+    
+    {% endblock %}
+</body>
+</html>

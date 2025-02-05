@@ -1,0 +1,30 @@
+{% extends "rst/base.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Admin Dashboard {% endblock %}</title>
+</head>
+<body>
+    {% block home %}
+    <a href="{% url 'rst:adminPage' %}"> Home </a>
+    {%endblock%}
+    {% block content%}
+    <div class="container">
+        <div class="main-message">
+            <p>Hi {{user}}, Welcome to the result checker website for the department of computer science in the University of Nigeria Nsukka</p>
+        </div>
+        <div class="admin-rights-container">
+            <p class="admin-rights">You may View, update or upload student result</p>
+            <div class="admin-rights">
+                <a href="http://127.0.0.1:8000/admin/rst/result/"><p>View/Update Results</p></a>
+                <a href="{% url 'rst:search' %}"><p>Upload Results</p></a>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

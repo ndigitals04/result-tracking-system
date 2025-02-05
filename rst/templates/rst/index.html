@@ -1,0 +1,26 @@
+{% extends "rst/base.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Index {% endblock %}</title>
+</head>
+<body>
+    {% block home %}
+    <a href="{% url 'rst:index' %}"> Home </a>
+    {%endblock%}
+    {% block content%}
+    <div class="container">
+        <div class="main-message">
+            <p>Hi {{request.user.first_name}}, Welcome to the result checker website for the department of computer science in the University of NIgeria Nsukka</p>
+            <div class="view-result">
+                <a href= "{% url 'rst:view_result' %}"> <p>View your Results Now</p></a>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>
