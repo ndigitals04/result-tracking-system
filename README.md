@@ -1,11 +1,3 @@
-<style>
-    p, ul{
-        line-height: 2.2rem;
-    }
-    ul ul{
-        list-style: square;
-    }
-</style>
 
 <img src="home-page.png" width="100%">
 
