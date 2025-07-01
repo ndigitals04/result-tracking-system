@@ -60,4 +60,4 @@
 <br>
 <p> For more details on the project please check the project pdf report in the repo. </p>
 
-<a href="https://youtu.be/VeWnA5CrBHo" ><p>View the live demo on youtube</p></a>
+[View the live demo on youtube](https://youtu.be/VeWnA5CrBHo)
